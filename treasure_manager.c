@@ -116,7 +116,7 @@ void createTreasure(char *hunt)
     printf("Longitude:");
     scanf("%lf", &t.lon);
  
-    printf("Clue:");
+    printf("Clue Text:");
     getchar();
     fgets(t.clue,sizeof(t.clue),stdin);
     t.clue[strlen(t.clue)-1] = '\0';
