@@ -3,7 +3,7 @@
 *.bashrc
 *.motd_shown
 *.profile
-*.sudo_as_admin_succesful
+*.sudo_as_admin_successful
 *.wget-hsts
 .cache
 .H1
