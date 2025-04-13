@@ -1,0 +1,12 @@
+*.bash_history
+*.bash_logout
+*.bashrc
+*.motd_shown
+*.profile
+*.sudo_as_admin_succesful
+*.wget-hsts
+.cache
+.H1
+.vscode-server
+tm
+logged_hunt_H1
