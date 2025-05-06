@@ -16,11 +16,6 @@ typedef struct
 } treasure;
 
 
-
-
-
-
-
 int main(int argc, char *argv[])
 {
  
@@ -28,28 +23,44 @@ int main(int argc, char *argv[])
     {
         if (strcmp(argv[1], "--add") == 0)
         {
+
+            static char path[128],huntspath[128];
+            snprintf(path, sizeof(path), "hunts/%s", argv[2]);
+            strcpy(huntspath,"hunts");
+
             struct stat path_stat;
-            if (stat(argv[2], &path_stat) == 0)
+            if (stat(path, &path_stat) == 0)
             {
                 if (S_ISDIR(path_stat.st_mode))
                 {
                     createTreasure(argv[2]);
                 }
             }
-            else
+            else if (stat(huntspath, &path_stat) == 0)
             {
-                mkdir(argv[2], 0777);
-                if(createBinFile(argv[2]) && createLogFile(argv[2]))
+                if (S_ISDIR(path_stat.st_mode)) {
+                    mkdir(path, 0777);
+                    if (createBinFile(argv[2]) && createLogFile(argv[2]))
+                        createTreasure(argv[2]);
+                    else
+                        updateLogFile(argv[2], "--add", "", 1);
+                }      
+            } else {
+                mkdir("hunts", 0777);
+                mkdir(path, 0777);
+                if (createBinFile(argv[2]) && createLogFile(argv[2]))
                     createTreasure(argv[2]);
                 else
-                    updateLogFile(argv[2],"--add","",1);
+                    updateLogFile(argv[2], "--add", "", 1);
             }
         }
         else if (strcmp(argv[1], "--list") == 0)
         {
             if(argc>2) {
+                static char path[128];
+                snprintf(path, sizeof(path), "hunts/%s", argv[2]);
                 struct stat path_stat;
-                if (stat(argv[2], &path_stat) == 0)
+                if (stat(path, &path_stat) == 0)
                 {
                     if (S_ISDIR(path_stat.st_mode))
                     {
@@ -71,8 +82,10 @@ int main(int argc, char *argv[])
         else if (strcmp(argv[1], "--remove_treasure") == 0)
         {
             if(argc>3) {
+                static char path[128];
+                snprintf(path, sizeof(path), "hunts/%s", argv[2]);
                 struct stat path_stat;
-                if (stat(argv[2], &path_stat) == 0)
+                if (stat(path, &path_stat) == 0)
                 {
                     if (S_ISDIR(path_stat.st_mode))
                     {
@@ -89,8 +102,10 @@ int main(int argc, char *argv[])
         else if (strcmp(argv[1], "--remove_hunt") == 0)
         {
             if(argc>2) {
+                static char path[128];
+                snprintf(path, sizeof(path), "hunts/%s", argv[2]);
                 struct stat path_stat;
-                if (stat(argv[2], &path_stat) == 0)
+                if (stat(path, &path_stat) == 0)
                 {
                     if (S_ISDIR(path_stat.st_mode))
                     {
@@ -103,7 +118,10 @@ int main(int argc, char *argv[])
             } else {
                 printf("Usage: --remove_hunt <hunt_id>\n");
             }
-        } else {
+        } else if(strcmp(argv[1], "--list_hunts") == 0) {
+            list_hunts("hunts");
+        }
+        else {
             printf("%s is not an existing command!\n",argv[1]);
         }
     }

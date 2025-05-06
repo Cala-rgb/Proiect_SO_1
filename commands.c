@@ -4,6 +4,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <dirent.h>
 #include <time.h>
 
 typedef struct
@@ -18,7 +19,7 @@ typedef struct
 void updateLogFile(char hunt[], char op[], char tid[], int failed) {
 
     static char path[128];
-    snprintf(path, sizeof(path),"%s/%s",hunt,"logged_hunt.txt");
+    snprintf(path, sizeof(path),"hunts/%s/%s",hunt,"logged_hunt.txt");
 
     FILE *file;
 
@@ -87,6 +88,8 @@ void updateLogFile(char hunt[], char op[], char tid[], int failed) {
         else if(strcmp(op,"--remove_hunt")==0) {
             strcat(msg,"Removed hunt ");
             strcat(msg,hunt);
+        } else if(strcmp(op,"--list_hunts")==0) {
+            strcat(msg,"Listed hunts !");
         }
     }
 
@@ -128,7 +131,7 @@ void createTreasure(char *hunt)
  
  
     static char path[128];
-    snprintf(path, sizeof(path),"%s/%s",hunt,"treasure.bin");
+    snprintf(path, sizeof(path),"hunts/%s/%s",hunt,"treasure.bin");
  
     int file;
     if((file = open(path, O_WRONLY | O_CREAT | O_APPEND, 0777))==0) {
@@ -147,7 +150,7 @@ void createTreasure(char *hunt)
  
 void view_treasure(char hunt_id[], char treasure_id[]) {
     static char path[128];
-    snprintf(path, sizeof(path),"%s/%s",hunt_id,"treasure.bin");
+    snprintf(path, sizeof(path),"hunts/%s/%s",hunt_id,"treasure.bin");
  
     int file;
 
@@ -182,7 +185,7 @@ void view_treasure(char hunt_id[], char treasure_id[]) {
 void list(char hunt_id[]) {
  
     static char path[128];
-    snprintf(path, sizeof(path),"%s/%s",hunt_id,"treasure.bin");
+    snprintf(path, sizeof(path),"hunts/%s/%s",hunt_id,"treasure.bin");
  
     struct stat st;
     stat(path, &st);
@@ -211,7 +214,7 @@ void list(char hunt_id[]) {
 void delete_dir(char hunt_id[]) {
  
     static char path[128],path2[128];
-    snprintf(path, sizeof(path),"%s/%s",hunt_id,"treasure.bin");
+    snprintf(path, sizeof(path),"hunts/%s/%s",hunt_id,"treasure.bin");
 
     if(sizeof(path)>0) {
         if(unlink(path)!=0) {
@@ -220,8 +223,8 @@ void delete_dir(char hunt_id[]) {
         }
     }
 
-    snprintf(path, sizeof(path),"%s/%s",hunt_id,"logged_hunt.txt");
-    snprintf(path2, sizeof(path),"%s%s","logged_hunt_",hunt_id);
+    snprintf(path, sizeof(path),"hunts/%s/%s",hunt_id,"logged_hunt.txt");
+    snprintf(path2, sizeof(path),"hunts/%s%s","logged_hunt_",hunt_id);
 
     updateLogFile(hunt_id,"--remove_hunt","",0);
 
@@ -246,7 +249,7 @@ void delete_dir(char hunt_id[]) {
  
 void delete_treasure(char hunt_id[], char treasure_id[]) {
     static char path[128];
-    snprintf(path, sizeof(path),"%s/%s",hunt_id,"treasure.bin");
+    snprintf(path, sizeof(path),"hunts/%s/%s",hunt_id,"treasure.bin");
  
     int file;
     if((file = open(path, O_RDWR, 0777)) == 0) {
@@ -302,7 +305,7 @@ void delete_treasure(char hunt_id[], char treasure_id[]) {
 
 int createBinFile(char dir[]) {
     static char path[128];
-    snprintf(path, sizeof(path),"%s/%s",dir,"treasure.bin");
+    snprintf(path, sizeof(path),"hunts/%s/%s",dir,"treasure.bin");
 
     int file;
  
@@ -318,11 +321,12 @@ int createBinFile(char dir[]) {
 
 int createLogFile(char dir[]) {
     static char path[128],path2[128];
-    snprintf(path, sizeof(path),"%s/%s",dir,"logged_hunt.txt");
+    snprintf(path, sizeof(path),"hunts/%s/%s",dir,"logged_hunt.txt");
 
     FILE *file;
  
     if((file = fopen(path,"w")) == NULL) {
+        printf("HERE");
         printf("Error at creating log file!\n");
         return 0;
     }
@@ -331,7 +335,7 @@ int createLogFile(char dir[]) {
         fclose(file); 
     }
 
-    snprintf(path2, sizeof(path2),"%s%s","logged_hunt_",dir);
+    snprintf(path2, sizeof(path2),"hunts/%s%s","logged_hunt_",dir);
 
     /*if((file = fopen(path2,"w")) == 0) {
         printf("Error at creating root log file!");
@@ -341,10 +345,58 @@ int createLogFile(char dir[]) {
         fclose(file); 
     }*/
 
+    //printf("ajunge aici");
+
     if (symlink(path, path2) == -1) {
         perror("Error at linking log files!");
         return 0;
     }
     return 1;
 
+}
+
+int count_treasures(const char *path)
+{
+    int file;
+    if ((file = open(path, O_RDONLY, 0777)) == 0)
+    {
+        printf("error at opening bin file\n");
+    }
+    int file_size = lseek(file, 0, SEEK_END);
+    close(file);
+    return file_size / sizeof(treasure);
+}
+
+void list_hunts(char *path)
+{
+    DIR *dir;
+    struct dirent *entry;
+    struct stat statbuf;
+    char fullpath[260];
+
+    dir = opendir(path);
+    if (dir == NULL)
+    {
+        perror("opendir");
+        return ;
+    }
+
+    while ((entry = readdir(dir)) != NULL)
+    {
+        // Skip "." and ".."
+        if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
+            continue;
+
+        snprintf(fullpath, sizeof(fullpath), "%s/%s", path, entry->d_name);
+
+        if (stat(fullpath, &statbuf) == 0 && S_ISDIR(statbuf.st_mode))
+        {
+            char binFilePath[360];
+            snprintf(binFilePath, sizeof(binFilePath), "%s/%s", fullpath, "treasure.bin");
+            int noOfTreasures = count_treasures(binFilePath);
+            printf("Hunt ID: %s, Number of Treasures: %d\n", entry->d_name, noOfTreasures);
+        }
+    }
+
+    closedir(dir);
 }

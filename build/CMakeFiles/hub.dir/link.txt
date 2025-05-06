@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/hub.dir/hub_commands.c.o CMakeFiles/hub.dir/treasure_hub.c.o CMakeFiles/hub.dir/handle_signals.c.o -o hub 

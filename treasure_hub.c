@@ -1,61 +1,89 @@
+#define _POSIX_SOURCE
+#define _DEFAULT_SOURCE
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
+#include <signal.h>
+#include <errno.h>
+#include "hub_commands.h"
 
-void start_monitor() {
+monitor m = {-1, 0};
 
+char command[100];
 
-
+monitor *getMainMonitor() {
+    return &m;
 }
+
+int monitor_is_stopping()
+{
+    if (m.status == 2)
+    {
+        return 1; // Stopping
+    }
+    return 0; // Not stopping
+}
+
+
 
 int main(int argc, char *argv[])
 {
- 
-    if (argc > 1)
-    {
-        if (strcmp(argv[1], "--start_monitor") == 0)
-        {
-            int pid = fork();
-            if(pid==0) {
 
-            } else if(pid>0) {
+    while(1) {
 
+        command[0] = '\0';
+
+        
+        if(m.pid!=0) {
+            printf("th> ");
+            scanf("%99s", command);
+
+            if(monitor_is_stopping()) {
+                if(m.pid>0) {
+                    printf("Monitor is stopping, can not execute commands!\n");
+                }
+            } else if (strcmp(command, "start_monitor") == 0)
+            {
+                start_monitor(&m);
             }
-            printf("Started monitor!\n");
-        }
-        else if (strcmp(argv[1], "--list_hunts") == 0)
-        {
-            printf("Listed hunts!");
-        }
-        else if (strcmp(argv[1], "--list_treasures") == 0)
-        {
-            if(argc > 2) {
-                printf("Listed treasures of hunt %s\n",argv[2]);
+            else if (strcmp(command, "list_hunts") == 0)
+            {
+                list_hunts(&m);
+            }
+            else if (strcmp(command, "list_treasures") == 0)
+            {
+                list_treasures(&m);
+            }
+            else if (strcmp(command, "view_treasure") == 0)
+            {
+                view_treasure(&m);
+            }
+            else if (strcmp(command, "stop_monitor") == 0)
+            {
+                stop_monitor(&m);
+            }else if (strcmp(command, "exit") == 0)
+            {
+                if(m.pid!=0) {
+                    //printf("%d", m.status);
+                    if (m.status == 1)
+                    {
+                        printf("Monitor is still running!\n");
+                    }
+                    else
+                    {
+                        printf("Exiting...\n");
+                        exit(0);
+                    }
+                }
+                
             } else {
-                printf("Usage: --list_treasures <hunt_id>\n");
+                printf("%s is not an existing command!\n",command);
             }
-        }
-        else if (strcmp(argv[1], "--view_treasure") == 0)
-        {
-            if(argc>3) {
-                printf("Viewed treasure %s of hunt %s\n",argv[3],argv[2]);
-            } else {
-                printf("Usage: --view_treasure <hunt_id> <treasure_id>\n");
-            }
-        }
-        else if (strcmp(argv[1], "--stop_monitor") == 0)
-        {
-            printf("Stopped monitor!\n");
-        }else if (strcmp(argv[1], "--exit") == 0)
-        {
-            printf("Exited!");
-        } else {
-            printf("%s is not an existing command!\n",argv[1]);
-        }
+
+            
+        } 
     }
-    else
-    {
-        printf("Usage: treasure_manager --opt\n");
-    }
+    
 }

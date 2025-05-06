@@ -1,0 +1,12 @@
+Log file for hunt H2
+Added treasure T10 to hunt H2
+Added treasure T2 to hunt H2
+Removed treasure T2 of hunt H2
+Added treasure T2 to hunt H2
+Listed hunt H2
+Removed treasure T2 of hunt H2
+Listed hunt H2
+
+
+
+
