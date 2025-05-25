@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall CMakeFiles/treasure_manager.dir/commands.c.o CMakeFiles/treasure_manager.dir/treasure_manager.c.o -o treasure_manager 

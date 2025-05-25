@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.10)
+
+# Project name and language
+project(treasure_hunt)
+
+# All source files for treasure hub
+set(TH_SOURCES
+    hub_commands.c
+    treasure_hub.c
+    handle_signals.c
+)
+
+# Create the executables
+add_executable(tm treasure_manager.c commands.c)
+add_executable(th ${TH_SOURCES})
+add_executable(sc score_calculator.c)
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")

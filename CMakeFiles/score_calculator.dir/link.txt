@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall CMakeFiles/score_calculator.dir/score_calculator.c.o -o score_calculator 

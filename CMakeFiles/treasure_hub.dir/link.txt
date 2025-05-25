@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall CMakeFiles/treasure_hub.dir/hub_commands.c.o CMakeFiles/treasure_hub.dir/treasure_hub.c.o CMakeFiles/treasure_hub.dir/handle_signals.c.o -o treasure_hub 
