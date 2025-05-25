@@ -66,4 +66,5 @@ CMakeFiles/sc.dir/score_calculator.c.o: /home/cala/score_calculator.c \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h /home/cala/common.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
- /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix2_lim.h
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /home/cala/config.h

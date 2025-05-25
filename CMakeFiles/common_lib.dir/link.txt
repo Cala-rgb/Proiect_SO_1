@@ -1,2 +1,2 @@
-/usr/bin/ar qc libcommon_lib.a CMakeFiles/common_lib.dir/commands.c.o CMakeFiles/common_lib.dir/common.c.o
+/usr/bin/ar qc libcommon_lib.a CMakeFiles/common_lib.dir/common.c.o CMakeFiles/common_lib.dir/commands.c.o CMakeFiles/common_lib.dir/handle_signals.c.o CMakeFiles/common_lib.dir/interface.c.o CMakeFiles/common_lib.dir/interface_arrows.c.o
 /usr/bin/ranlib libcommon_lib.a

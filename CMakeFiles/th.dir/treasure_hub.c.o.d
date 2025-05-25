@@ -91,4 +91,5 @@ CMakeFiles/th.dir/treasure_hub.c.o: /home/cala/treasure_hub.c \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /home/cala/handle_signals.h /home/cala/interface.h
+ /home/cala/handle_signals.h /home/cala/interface.h \
+ /home/cala/interface_arrows.h

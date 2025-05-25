@@ -69,24 +69,10 @@ include CMakeFiles/common_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/common_lib.dir/flags.make
 
-CMakeFiles/common_lib.dir/commands.c.o: CMakeFiles/common_lib.dir/flags.make
-CMakeFiles/common_lib.dir/commands.c.o: commands.c
-CMakeFiles/common_lib.dir/commands.c.o: CMakeFiles/common_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/common_lib.dir/commands.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/common_lib.dir/commands.c.o -MF CMakeFiles/common_lib.dir/commands.c.o.d -o CMakeFiles/common_lib.dir/commands.c.o -c /home/cala/commands.c
-
-CMakeFiles/common_lib.dir/commands.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/common_lib.dir/commands.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cala/commands.c > CMakeFiles/common_lib.dir/commands.c.i
-
-CMakeFiles/common_lib.dir/commands.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/common_lib.dir/commands.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/commands.c -o CMakeFiles/common_lib.dir/commands.c.s
-
 CMakeFiles/common_lib.dir/common.c.o: CMakeFiles/common_lib.dir/flags.make
 CMakeFiles/common_lib.dir/common.c.o: common.c
 CMakeFiles/common_lib.dir/common.c.o: CMakeFiles/common_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/common_lib.dir/common.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/common_lib.dir/common.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/common_lib.dir/common.c.o -MF CMakeFiles/common_lib.dir/common.c.o.d -o CMakeFiles/common_lib.dir/common.c.o -c /home/cala/common.c
 
 CMakeFiles/common_lib.dir/common.c.i: cmake_force
@@ -97,19 +83,81 @@ CMakeFiles/common_lib.dir/common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/common_lib.dir/common.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/common.c -o CMakeFiles/common_lib.dir/common.c.s
 
+CMakeFiles/common_lib.dir/commands.c.o: CMakeFiles/common_lib.dir/flags.make
+CMakeFiles/common_lib.dir/commands.c.o: commands.c
+CMakeFiles/common_lib.dir/commands.c.o: CMakeFiles/common_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/common_lib.dir/commands.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/common_lib.dir/commands.c.o -MF CMakeFiles/common_lib.dir/commands.c.o.d -o CMakeFiles/common_lib.dir/commands.c.o -c /home/cala/commands.c
+
+CMakeFiles/common_lib.dir/commands.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/common_lib.dir/commands.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cala/commands.c > CMakeFiles/common_lib.dir/commands.c.i
+
+CMakeFiles/common_lib.dir/commands.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/common_lib.dir/commands.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/commands.c -o CMakeFiles/common_lib.dir/commands.c.s
+
+CMakeFiles/common_lib.dir/handle_signals.c.o: CMakeFiles/common_lib.dir/flags.make
+CMakeFiles/common_lib.dir/handle_signals.c.o: handle_signals.c
+CMakeFiles/common_lib.dir/handle_signals.c.o: CMakeFiles/common_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/common_lib.dir/handle_signals.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/common_lib.dir/handle_signals.c.o -MF CMakeFiles/common_lib.dir/handle_signals.c.o.d -o CMakeFiles/common_lib.dir/handle_signals.c.o -c /home/cala/handle_signals.c
+
+CMakeFiles/common_lib.dir/handle_signals.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/common_lib.dir/handle_signals.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cala/handle_signals.c > CMakeFiles/common_lib.dir/handle_signals.c.i
+
+CMakeFiles/common_lib.dir/handle_signals.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/common_lib.dir/handle_signals.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/handle_signals.c -o CMakeFiles/common_lib.dir/handle_signals.c.s
+
+CMakeFiles/common_lib.dir/interface.c.o: CMakeFiles/common_lib.dir/flags.make
+CMakeFiles/common_lib.dir/interface.c.o: interface.c
+CMakeFiles/common_lib.dir/interface.c.o: CMakeFiles/common_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/common_lib.dir/interface.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/common_lib.dir/interface.c.o -MF CMakeFiles/common_lib.dir/interface.c.o.d -o CMakeFiles/common_lib.dir/interface.c.o -c /home/cala/interface.c
+
+CMakeFiles/common_lib.dir/interface.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/common_lib.dir/interface.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cala/interface.c > CMakeFiles/common_lib.dir/interface.c.i
+
+CMakeFiles/common_lib.dir/interface.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/common_lib.dir/interface.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/interface.c -o CMakeFiles/common_lib.dir/interface.c.s
+
+CMakeFiles/common_lib.dir/interface_arrows.c.o: CMakeFiles/common_lib.dir/flags.make
+CMakeFiles/common_lib.dir/interface_arrows.c.o: interface_arrows.c
+CMakeFiles/common_lib.dir/interface_arrows.c.o: CMakeFiles/common_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/common_lib.dir/interface_arrows.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/common_lib.dir/interface_arrows.c.o -MF CMakeFiles/common_lib.dir/interface_arrows.c.o.d -o CMakeFiles/common_lib.dir/interface_arrows.c.o -c /home/cala/interface_arrows.c
+
+CMakeFiles/common_lib.dir/interface_arrows.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/common_lib.dir/interface_arrows.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cala/interface_arrows.c > CMakeFiles/common_lib.dir/interface_arrows.c.i
+
+CMakeFiles/common_lib.dir/interface_arrows.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/common_lib.dir/interface_arrows.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/interface_arrows.c -o CMakeFiles/common_lib.dir/interface_arrows.c.s
+
 # Object files for target common_lib
 common_lib_OBJECTS = \
+"CMakeFiles/common_lib.dir/common.c.o" \
 "CMakeFiles/common_lib.dir/commands.c.o" \
-"CMakeFiles/common_lib.dir/common.c.o"
+"CMakeFiles/common_lib.dir/handle_signals.c.o" \
+"CMakeFiles/common_lib.dir/interface.c.o" \
+"CMakeFiles/common_lib.dir/interface_arrows.c.o"
 
 # External object files for target common_lib
 common_lib_EXTERNAL_OBJECTS =
 
-libcommon_lib.a: CMakeFiles/common_lib.dir/commands.c.o
 libcommon_lib.a: CMakeFiles/common_lib.dir/common.c.o
+libcommon_lib.a: CMakeFiles/common_lib.dir/commands.c.o
+libcommon_lib.a: CMakeFiles/common_lib.dir/handle_signals.c.o
+libcommon_lib.a: CMakeFiles/common_lib.dir/interface.c.o
+libcommon_lib.a: CMakeFiles/common_lib.dir/interface_arrows.c.o
 libcommon_lib.a: CMakeFiles/common_lib.dir/build.make
 libcommon_lib.a: CMakeFiles/common_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libcommon_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libcommon_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/common_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/common_lib.dir/link.txt --verbose=$(VERBOSE)
 

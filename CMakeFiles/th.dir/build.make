@@ -69,24 +69,10 @@ include CMakeFiles/th.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/th.dir/flags.make
 
-CMakeFiles/th.dir/hub_commands.c.o: CMakeFiles/th.dir/flags.make
-CMakeFiles/th.dir/hub_commands.c.o: hub_commands.c
-CMakeFiles/th.dir/hub_commands.c.o: CMakeFiles/th.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/th.dir/hub_commands.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/th.dir/hub_commands.c.o -MF CMakeFiles/th.dir/hub_commands.c.o.d -o CMakeFiles/th.dir/hub_commands.c.o -c /home/cala/hub_commands.c
-
-CMakeFiles/th.dir/hub_commands.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/th.dir/hub_commands.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cala/hub_commands.c > CMakeFiles/th.dir/hub_commands.c.i
-
-CMakeFiles/th.dir/hub_commands.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/th.dir/hub_commands.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/hub_commands.c -o CMakeFiles/th.dir/hub_commands.c.s
-
 CMakeFiles/th.dir/treasure_hub.c.o: CMakeFiles/th.dir/flags.make
 CMakeFiles/th.dir/treasure_hub.c.o: treasure_hub.c
 CMakeFiles/th.dir/treasure_hub.c.o: CMakeFiles/th.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/th.dir/treasure_hub.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/th.dir/treasure_hub.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/th.dir/treasure_hub.c.o -MF CMakeFiles/th.dir/treasure_hub.c.o.d -o CMakeFiles/th.dir/treasure_hub.c.o -c /home/cala/treasure_hub.c
 
 CMakeFiles/th.dir/treasure_hub.c.i: cmake_force
@@ -97,67 +83,34 @@ CMakeFiles/th.dir/treasure_hub.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/th.dir/treasure_hub.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/treasure_hub.c -o CMakeFiles/th.dir/treasure_hub.c.s
 
-CMakeFiles/th.dir/handle_signals.c.o: CMakeFiles/th.dir/flags.make
-CMakeFiles/th.dir/handle_signals.c.o: handle_signals.c
-CMakeFiles/th.dir/handle_signals.c.o: CMakeFiles/th.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/th.dir/handle_signals.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/th.dir/handle_signals.c.o -MF CMakeFiles/th.dir/handle_signals.c.o.d -o CMakeFiles/th.dir/handle_signals.c.o -c /home/cala/handle_signals.c
+CMakeFiles/th.dir/hub_commands.c.o: CMakeFiles/th.dir/flags.make
+CMakeFiles/th.dir/hub_commands.c.o: hub_commands.c
+CMakeFiles/th.dir/hub_commands.c.o: CMakeFiles/th.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/th.dir/hub_commands.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/th.dir/hub_commands.c.o -MF CMakeFiles/th.dir/hub_commands.c.o.d -o CMakeFiles/th.dir/hub_commands.c.o -c /home/cala/hub_commands.c
 
-CMakeFiles/th.dir/handle_signals.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/th.dir/handle_signals.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cala/handle_signals.c > CMakeFiles/th.dir/handle_signals.c.i
+CMakeFiles/th.dir/hub_commands.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/th.dir/hub_commands.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cala/hub_commands.c > CMakeFiles/th.dir/hub_commands.c.i
 
-CMakeFiles/th.dir/handle_signals.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/th.dir/handle_signals.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/handle_signals.c -o CMakeFiles/th.dir/handle_signals.c.s
-
-CMakeFiles/th.dir/interface.c.o: CMakeFiles/th.dir/flags.make
-CMakeFiles/th.dir/interface.c.o: interface.c
-CMakeFiles/th.dir/interface.c.o: CMakeFiles/th.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/th.dir/interface.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/th.dir/interface.c.o -MF CMakeFiles/th.dir/interface.c.o.d -o CMakeFiles/th.dir/interface.c.o -c /home/cala/interface.c
-
-CMakeFiles/th.dir/interface.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/th.dir/interface.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cala/interface.c > CMakeFiles/th.dir/interface.c.i
-
-CMakeFiles/th.dir/interface.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/th.dir/interface.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/interface.c -o CMakeFiles/th.dir/interface.c.s
-
-CMakeFiles/th.dir/common.c.o: CMakeFiles/th.dir/flags.make
-CMakeFiles/th.dir/common.c.o: common.c
-CMakeFiles/th.dir/common.c.o: CMakeFiles/th.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/th.dir/common.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/th.dir/common.c.o -MF CMakeFiles/th.dir/common.c.o.d -o CMakeFiles/th.dir/common.c.o -c /home/cala/common.c
-
-CMakeFiles/th.dir/common.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/th.dir/common.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cala/common.c > CMakeFiles/th.dir/common.c.i
-
-CMakeFiles/th.dir/common.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/th.dir/common.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/common.c -o CMakeFiles/th.dir/common.c.s
+CMakeFiles/th.dir/hub_commands.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/th.dir/hub_commands.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cala/hub_commands.c -o CMakeFiles/th.dir/hub_commands.c.s
 
 # Object files for target th
 th_OBJECTS = \
-"CMakeFiles/th.dir/hub_commands.c.o" \
 "CMakeFiles/th.dir/treasure_hub.c.o" \
-"CMakeFiles/th.dir/handle_signals.c.o" \
-"CMakeFiles/th.dir/interface.c.o" \
-"CMakeFiles/th.dir/common.c.o"
+"CMakeFiles/th.dir/hub_commands.c.o"
 
 # External object files for target th
 th_EXTERNAL_OBJECTS =
 
-th: CMakeFiles/th.dir/hub_commands.c.o
 th: CMakeFiles/th.dir/treasure_hub.c.o
-th: CMakeFiles/th.dir/handle_signals.c.o
-th: CMakeFiles/th.dir/interface.c.o
-th: CMakeFiles/th.dir/common.c.o
+th: CMakeFiles/th.dir/hub_commands.c.o
 th: CMakeFiles/th.dir/build.make
+th: libcommon_lib.a
 th: CMakeFiles/th.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable th"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cala/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable th"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/th.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

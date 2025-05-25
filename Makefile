@@ -117,17 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tm
+# Target rules for targets named common_lib
 
 # Build rule for target.
-tm: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tm
-.PHONY : tm
+common_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common_lib
+.PHONY : common_lib
 
 # fast build rule for target.
-tm/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tm.dir/build.make CMakeFiles/tm.dir/build
-.PHONY : tm/fast
+common_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/build
+.PHONY : common_lib/fast
 
 #=============================================================================
 # Target rules for targets named th
@@ -141,6 +141,19 @@ th: cmake_check_build_system
 th/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/build
 .PHONY : th/fast
+
+#=============================================================================
+# Target rules for targets named tm
+
+# Build rule for target.
+tm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tm
+.PHONY : tm
+
+# fast build rule for target.
+tm/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tm.dir/build.make CMakeFiles/tm.dir/build
+.PHONY : tm/fast
 
 #=============================================================================
 # Target rules for targets named sc
@@ -160,7 +173,7 @@ commands.o: commands.c.o
 
 # target to build an object file
 commands.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tm.dir/build.make CMakeFiles/tm.dir/commands.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/commands.c.o
 .PHONY : commands.c.o
 
 commands.i: commands.c.i
@@ -168,7 +181,7 @@ commands.i: commands.c.i
 
 # target to preprocess a source file
 commands.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tm.dir/build.make CMakeFiles/tm.dir/commands.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/commands.c.i
 .PHONY : commands.c.i
 
 commands.s: commands.c.s
@@ -176,7 +189,7 @@ commands.s: commands.c.s
 
 # target to generate assembly for a file
 commands.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tm.dir/build.make CMakeFiles/tm.dir/commands.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/commands.c.s
 .PHONY : commands.c.s
 
 common.o: common.c.o
@@ -184,9 +197,7 @@ common.o: common.c.o
 
 # target to build an object file
 common.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tm.dir/build.make CMakeFiles/tm.dir/common.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/common.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sc.dir/build.make CMakeFiles/sc.dir/common.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/common.c.o
 .PHONY : common.c.o
 
 common.i: common.c.i
@@ -194,9 +205,7 @@ common.i: common.c.i
 
 # target to preprocess a source file
 common.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tm.dir/build.make CMakeFiles/tm.dir/common.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/common.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sc.dir/build.make CMakeFiles/sc.dir/common.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/common.c.i
 .PHONY : common.c.i
 
 common.s: common.c.s
@@ -204,9 +213,7 @@ common.s: common.c.s
 
 # target to generate assembly for a file
 common.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tm.dir/build.make CMakeFiles/tm.dir/common.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/common.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sc.dir/build.make CMakeFiles/sc.dir/common.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/common.c.s
 .PHONY : common.c.s
 
 handle_signals.o: handle_signals.c.o
@@ -214,7 +221,7 @@ handle_signals.o: handle_signals.c.o
 
 # target to build an object file
 handle_signals.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/handle_signals.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/handle_signals.c.o
 .PHONY : handle_signals.c.o
 
 handle_signals.i: handle_signals.c.i
@@ -222,7 +229,7 @@ handle_signals.i: handle_signals.c.i
 
 # target to preprocess a source file
 handle_signals.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/handle_signals.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/handle_signals.c.i
 .PHONY : handle_signals.c.i
 
 handle_signals.s: handle_signals.c.s
@@ -230,7 +237,7 @@ handle_signals.s: handle_signals.c.s
 
 # target to generate assembly for a file
 handle_signals.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/handle_signals.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/handle_signals.c.s
 .PHONY : handle_signals.c.s
 
 hub_commands.o: hub_commands.c.o
@@ -262,7 +269,7 @@ interface.o: interface.c.o
 
 # target to build an object file
 interface.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/interface.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/interface.c.o
 .PHONY : interface.c.o
 
 interface.i: interface.c.i
@@ -270,7 +277,7 @@ interface.i: interface.c.i
 
 # target to preprocess a source file
 interface.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/interface.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/interface.c.i
 .PHONY : interface.c.i
 
 interface.s: interface.c.s
@@ -278,8 +285,32 @@ interface.s: interface.c.s
 
 # target to generate assembly for a file
 interface.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/interface.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/interface.c.s
 .PHONY : interface.c.s
+
+interface_arrows.o: interface_arrows.c.o
+.PHONY : interface_arrows.o
+
+# target to build an object file
+interface_arrows.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/interface_arrows.c.o
+.PHONY : interface_arrows.c.o
+
+interface_arrows.i: interface_arrows.c.i
+.PHONY : interface_arrows.i
+
+# target to preprocess a source file
+interface_arrows.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/interface_arrows.c.i
+.PHONY : interface_arrows.c.i
+
+interface_arrows.s: interface_arrows.c.s
+.PHONY : interface_arrows.s
+
+# target to generate assembly for a file
+interface_arrows.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common_lib.dir/build.make CMakeFiles/common_lib.dir/interface_arrows.c.s
+.PHONY : interface_arrows.c.s
 
 score_calculator.o: score_calculator.c.o
 .PHONY : score_calculator.o
@@ -361,6 +392,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... common_lib"
 	@echo "... sc"
 	@echo "... th"
 	@echo "... tm"
@@ -379,6 +411,9 @@ help:
 	@echo "... interface.o"
 	@echo "... interface.i"
 	@echo "... interface.s"
+	@echo "... interface_arrows.o"
+	@echo "... interface_arrows.i"
+	@echo "... interface_arrows.s"
 	@echo "... score_calculator.o"
 	@echo "... score_calculator.i"
 	@echo "... score_calculator.s"

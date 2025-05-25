@@ -1,0 +1,36 @@
+cmake_minimum_required(VERSION 3.10)
+
+# Project name and language
+project(treasure_hunt C)
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+
+# Add common library
+add_library(common_lib STATIC
+    common.c
+    commands.c
+    handle_signals.c
+    interface.c
+    interface_arrows.c
+)
+
+# All source files for treasure hub
+set(TH_SOURCES
+    hub_commands.c
+    treasure_hub.c
+    handle_signals.c
+    interface.c
+)
+
+# Create the executables
+add_executable(tm treasure_manager.c ${TH_SOURCES})
+add_executable(th ${TH_SOURCES})
+add_executable(sc score_calculator.c)
+
+# Link common library to executables
+target_link_libraries(th common_lib)
+target_link_libraries(tm common_lib)
+target_link_libraries(sc common_lib)
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")

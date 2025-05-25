@@ -91,4 +91,4 @@ CMakeFiles/th.dir/handle_signals.c.o: /home/cala/handle_signals.c \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /home/cala/hub_commands.h /home/cala/common.h \
- /home/cala/handle_signals.h
+ /home/cala/handle_signals.h /home/cala/config.h

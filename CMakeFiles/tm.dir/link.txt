@@ -1,1 +1,1 @@
-/usr/bin/cc  -Wall CMakeFiles/tm.dir/treasure_manager.c.o CMakeFiles/tm.dir/commands.c.o CMakeFiles/tm.dir/common.c.o -o tm 
+/usr/bin/cc  -Wall CMakeFiles/tm.dir/treasure_manager.c.o -o tm  libcommon_lib.a 

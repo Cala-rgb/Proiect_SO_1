@@ -1,1 +1,1 @@
-/usr/bin/cc  -Wall CMakeFiles/th.dir/hub_commands.c.o CMakeFiles/th.dir/treasure_hub.c.o CMakeFiles/th.dir/handle_signals.c.o CMakeFiles/th.dir/interface.c.o CMakeFiles/th.dir/common.c.o -o th 
+/usr/bin/cc  -Wall CMakeFiles/th.dir/treasure_hub.c.o CMakeFiles/th.dir/hub_commands.c.o -o th  libcommon_lib.a 

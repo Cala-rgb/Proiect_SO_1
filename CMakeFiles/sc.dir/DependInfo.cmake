@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/cala/common.c" "CMakeFiles/sc.dir/common.c.o" "gcc" "CMakeFiles/sc.dir/common.c.o.d"
   "/home/cala/score_calculator.c" "CMakeFiles/sc.dir/score_calculator.c.o" "gcc" "CMakeFiles/sc.dir/score_calculator.c.o.d"
   )
 

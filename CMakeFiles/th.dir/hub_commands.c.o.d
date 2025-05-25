@@ -98,4 +98,4 @@ CMakeFiles/th.dir/hub_commands.c.o: /home/cala/hub_commands.c \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /home/cala/hub_commands.h /home/cala/common.h \
- /home/cala/handle_signals.h
+ /home/cala/handle_signals.h /home/cala/config.h

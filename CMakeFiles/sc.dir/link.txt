@@ -1,1 +1,1 @@
-/usr/bin/cc  -Wall CMakeFiles/sc.dir/score_calculator.c.o CMakeFiles/sc.dir/common.c.o -o sc 
+/usr/bin/cc  -Wall CMakeFiles/sc.dir/score_calculator.c.o -o sc  libcommon_lib.a 

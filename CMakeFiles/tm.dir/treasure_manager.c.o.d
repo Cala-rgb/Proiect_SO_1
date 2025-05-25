@@ -55,4 +55,4 @@ CMakeFiles/tm.dir/treasure_manager.c.o: /home/cala/treasure_manager.c \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h /home/cala/config.h

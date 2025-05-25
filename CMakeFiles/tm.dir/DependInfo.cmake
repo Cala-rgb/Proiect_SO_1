@@ -8,8 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/cala/commands.c" "CMakeFiles/tm.dir/commands.c.o" "gcc" "CMakeFiles/tm.dir/commands.c.o.d"
-  "/home/cala/common.c" "CMakeFiles/tm.dir/common.c.o" "gcc" "CMakeFiles/tm.dir/common.c.o.d"
   "/home/cala/treasure_manager.c" "CMakeFiles/tm.dir/treasure_manager.c.o" "gcc" "CMakeFiles/tm.dir/treasure_manager.c.o.d"
   )
 

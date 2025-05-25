@@ -1,8 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tm.dir/commands.c.o"
-  "CMakeFiles/tm.dir/commands.c.o.d"
-  "CMakeFiles/tm.dir/common.c.o"
-  "CMakeFiles/tm.dir/common.c.o.d"
   "CMakeFiles/tm.dir/treasure_manager.c.o"
   "CMakeFiles/tm.dir/treasure_manager.c.o.d"
   "tm"

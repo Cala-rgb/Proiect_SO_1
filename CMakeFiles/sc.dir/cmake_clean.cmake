@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sc.dir/common.c.o"
-  "CMakeFiles/sc.dir/common.c.o.d"
   "CMakeFiles/sc.dir/score_calculator.c.o"
   "CMakeFiles/sc.dir/score_calculator.c.o.d"
   "sc"
