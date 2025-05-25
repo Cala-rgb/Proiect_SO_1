@@ -257,6 +257,30 @@ hub_commands.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/hub_commands.c.s
 .PHONY : hub_commands.c.s
 
+interface.o: interface.c.o
+.PHONY : interface.o
+
+# target to build an object file
+interface.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/interface.c.o
+.PHONY : interface.c.o
+
+interface.i: interface.c.i
+.PHONY : interface.i
+
+# target to preprocess a source file
+interface.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/interface.c.i
+.PHONY : interface.c.i
+
+interface.s: interface.c.s
+.PHONY : interface.s
+
+# target to generate assembly for a file
+interface.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/th.dir/build.make CMakeFiles/th.dir/interface.c.s
+.PHONY : interface.c.s
+
 score_calculator.o: score_calculator.c.o
 .PHONY : score_calculator.o
 
@@ -352,6 +376,9 @@ help:
 	@echo "... hub_commands.o"
 	@echo "... hub_commands.i"
 	@echo "... hub_commands.s"
+	@echo "... interface.o"
+	@echo "... interface.i"
+	@echo "... interface.s"
 	@echo "... score_calculator.o"
 	@echo "... score_calculator.i"
 	@echo "... score_calculator.s"

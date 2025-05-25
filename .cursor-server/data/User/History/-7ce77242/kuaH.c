@@ -8,8 +8,18 @@
 #include <signal.h>
 #include <errno.h>
 #include <limits.h>
+#include <fcntl.h>
+#include "common.h"
 #include "hub_commands.h"
 #include "handle_signals.h"
+
+// Global pointer to monitor structure
+static monitor_t *current_monitor = NULL;
+
+// Function to set the current monitor
+void set_monitor(monitor_t *monitor) {
+    current_monitor = monitor;
+}
 
 void sigterm_handler(int sig)
 {
@@ -20,38 +30,24 @@ void sigterm_handler(int sig)
 
 void handle_sigterm()
 {
-    getMainMonitor()->status = 2; // Stopping
-    struct sigaction sa;
-    sa.sa_handler = sigterm_handler;
-    if (sigaction(SIGTERM, &sa, NULL) == -1)
-    {
-        perror("sigaction");
-        exit(EXIT_FAILURE);
+    if (current_monitor != NULL) {
+        current_monitor->status = 0;
     }
+    exit(0);
 }
 
-void sigchld_handler(int sig)
-{
-    int saved_errno = errno;
-    pid_t pid;
-    int status;
-
-    getMainMonitor()->status = 0; // Stopped
-
-    while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
-    {
-        if (WIFEXITED(status))
-        {
-            printf("Child process %d terminated with exit status %d\n", pid, WEXITSTATUS(status));
-
-        }
-        else if (WIFSIGNALED(status))
-        {
-            printf("Child process %d terminated by signal %d\n", pid, WTERMSIG(status));
+void sigchld_handler(int signo) {
+    if (current_monitor != NULL && current_monitor->status == 1) {
+        int status;
+        pid_t pid = waitpid(-1, &status, WNOHANG);
+        
+        if (pid > 0) {
+            if (WIFEXITED(status) || WIFSIGNALED(status)) {
+                current_monitor->status = 0;
+                printf("\nMonitor process terminated.\n");
+            }
         }
     }
-
-    errno = saved_errno;
 }
 
 void handle_sigchld()
@@ -122,16 +118,30 @@ void usr_handler(int sig) {
     fclose(file);
 }
 
-void handle_usr()
-{
+void handle_usr(int sig) {
     struct sigaction sa;
     memset(&sa, 0, sizeof(sa));
-    sa.sa_handler = usr_handler;
-    sigemptyset(&sa.sa_mask);
-    sa.sa_flags = SA_RESTART;
-
-    if (sigaction(SIGUSR1, &sa, NULL) == -1) {
-        write(STDERR_FILENO, "sigaction failed\n", 15);
-        exit(EXIT_FAILURE);
+    sa.sa_handler = SIG_IGN;
+    sigaction(SIGUSR1, &sa, NULL);
+    
+    char path[PATH_MAX];
+    snprintf(path, sizeof(path), "given_command.txt");
+    
+    FILE *file = fopen(path, "r");
+    if (!file) {
+        perror("Error opening command file");
+        return;
     }
+    
+    char command[4096];
+    if (fgets(command, sizeof(command), file) != NULL) {
+        fclose(file);
+        system(command);
+    } else {
+        fclose(file);
+        printf("Error reading command\n");
+    }
+    
+    sa.sa_handler = usr_handler;
+    sigaction(SIGUSR1, &sa, NULL);
 }

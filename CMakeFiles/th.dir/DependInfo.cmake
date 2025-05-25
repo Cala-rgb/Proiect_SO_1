@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/cala/common.c" "CMakeFiles/th.dir/common.c.o" "gcc" "CMakeFiles/th.dir/common.c.o.d"
   "/home/cala/handle_signals.c" "CMakeFiles/th.dir/handle_signals.c.o" "gcc" "CMakeFiles/th.dir/handle_signals.c.o.d"
   "/home/cala/hub_commands.c" "CMakeFiles/th.dir/hub_commands.c.o" "gcc" "CMakeFiles/th.dir/hub_commands.c.o.d"
+  "/home/cala/interface.c" "CMakeFiles/th.dir/interface.c.o" "gcc" "CMakeFiles/th.dir/interface.c.o.d"
   "/home/cala/treasure_hub.c" "CMakeFiles/th.dir/treasure_hub.c.o" "gcc" "CMakeFiles/th.dir/treasure_hub.c.o.d"
   )
 

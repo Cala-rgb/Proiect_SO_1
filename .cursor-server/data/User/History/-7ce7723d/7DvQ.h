@@ -6,9 +6,9 @@
 // Function to set the current monitor for signal handlers
 void set_monitor(monitor_t *monitor);
 
-// Signal handlers setup
+// Signal handlers
 void handle_sigterm(void);
-void handle_sigchld(void);
-void handle_usr(void);
+void handle_usr(int sig);
+void sigchld_handler(int signo);
 
 #endif // HANDLE_SIGNALS_H

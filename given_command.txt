@@ -1,1 +1,1 @@
-./sc H1 && ./sc H2 && true
+./sc H1 && ./sc H2 && ./sc H3 && true

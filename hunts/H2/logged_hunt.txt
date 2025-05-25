@@ -1,2 +1,5 @@
 Added treasure T1 to hunt H2
 Added treasure T2 to hunt H2
+Listed hunt H2
+Listed hunt H2
+Listed hunt H2
